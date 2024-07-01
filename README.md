@@ -1,6 +1,7 @@
 # Burner
 
 A rust utility for writing passes of zeros over single files, directories or disks.  
+Can also be used to write custom messages to the MBR to be displayed on reboot.  
 
 ## Build
 ```Cargo build --release```  
