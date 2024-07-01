@@ -25,20 +25,13 @@ passing the ```--passes``` option to the commands specifies how many passes of z
 
 ## Example
 
-Zero disk and overwrite the MBR with a message "Hai Tavis...." and 1 pass of zero writes:
+Zero disk and overwrite the MBR with a message "Hai Tavis...." and 1 pass of zero writes:  
+
 ```burner disk /dev/sda --msg "Hai Tavis..:)" --passes 1```  
 
-<video width="600" controls>
-  <source src="./assets/plain.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+Zero disk and overwrite the MBR with a message "Hai Tavis...." and 1 pass of zero writes with FIREEEEEEEEE:  
 
-Zero disk and overwrite the MBR with a message "Hai Tavis...." and 1 pass of zero writes with FIREEEEEEEEE:
 ```burner disk /dev/sda --msg "Hai Tavis..:)" --passes 1 --fire```  
 
-<video width="600" controls>
-  <source src="./assets/fire.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
 
 ## Reboot MSG
