@@ -39,4 +39,4 @@ https://github.com/lcfr-eth/burner/assets/62533238/ae83095a-4a20-499a-a933-5a76f
 
 ## Reboot MSG
 
-Reboot for the operator at the keyboard to be greeted with your msg and an unootable OS :) 
+Reboot for the operator at the keyboard to be greeted with your msg and an unbootable OS :) 
