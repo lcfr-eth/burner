@@ -29,9 +29,14 @@ Zero disk and overwrite the MBR with a message "Hai Tavis...." and 1 pass of zer
 
 ```burner disk /dev/sda --msg "Hai Tavis..:)" --passes 1```  
 
+https://github.com/lcfr-eth/burner/assets/62533238/fbe4ba99-ff28-458b-b263-cab1e73f8daa  
+
 Zero disk and overwrite the MBR with a message "Hai Tavis...." and 1 pass of zero writes with FIREEEEEEEEE:  
 
 ```burner disk /dev/sda --msg "Hai Tavis..:)" --passes 1 --fire```  
 
+https://github.com/lcfr-eth/burner/assets/62533238/ae83095a-4a20-499a-a933-5a76f3351012  
 
 ## Reboot MSG
+
+Reboot for the operator at the keyboard to be greeted with your msg and an unootable OS :) 
