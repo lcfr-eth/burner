@@ -7,9 +7,10 @@ use clap::{CommandFactory, Parser, Subcommand};
 use env_logger;
 use log::{debug, info, warn};
 use std::{
-    fs::{OpenOptions, remove_file},
+    fs::{File, OpenOptions, remove_file},
     io::{self, Write, Seek, SeekFrom},
     path::Path,
+    os::fd::AsRawFd,
     thread,
     sync::{Arc, atomic::{AtomicBool, Ordering}},
 };
@@ -17,10 +18,7 @@ use indicatif::{ProgressBar, ProgressStyle};
 use walkdir::WalkDir;
 use mbr::{MBRCODE, modify_string, write_mbr};
 use fire::display_fire;
-use libc::{ioctl};
-use libc::c_ulong;
-use std::fs::File;
-use std::os::fd::AsRawFd;
+use libc::{ioctl, c_ulong};
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
